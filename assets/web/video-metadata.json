@@ -1,0 +1,56 @@
+[
+  {
+    "file": "demo_connection_refinement.mp4",
+    "seconds": 50.3,
+    "width": 710,
+    "height": 480
+  },
+  {
+    "file": "demo_online_and_depth_alignment.mp4",
+    "seconds": 149.6,
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "more_results.mp4",
+    "seconds": 75.2,
+    "width": 712,
+    "height": 480
+  },
+  {
+    "file": "residence1.mp4",
+    "seconds": 38.8,
+    "width": 1300,
+    "height": 720
+  },
+  {
+    "file": "residence2.mp4",
+    "seconds": 25.5,
+    "width": 1300,
+    "height": 720
+  },
+  {
+    "file": "road.mp4",
+    "seconds": 108.2,
+    "width": 1300,
+    "height": 720
+  },
+  {
+    "file": "seqb.mp4",
+    "seconds": 98.7,
+    "width": 1300,
+    "height": 720
+  },
+  {
+    "file": "seqc.mp4",
+    "seconds": 124.5,
+    "width": 1300,
+    "height": 720
+  },
+  {
+    "file": "seqc1.mp4",
+    "seconds": 91.2,
+    "width": 1300,
+    "height": 720
+  }
+]
