@@ -1,0 +1,156 @@
+{
+  "version": 2,
+  "defaultScene": "holorecon-residence2",
+  "denseDelivery": {
+    "siteHosts": [
+      "zhuoxiaoli.github.io"
+    ],
+    "baseUrl": "https://raw.githubusercontent.com/ZhuoxiaoLi/HoloRecon_page/main/"
+  },
+  "scenes": [
+    {
+      "id": "holorecon-building1",
+      "dataset": "PanoRecon",
+      "label": "Building 1",
+      "path": "assets/pcd/web/holorecon-building1.ply",
+      "poster": "assets/pcd/web/holorecon-building1.webp",
+      "bytes": 15000235,
+      "sourcePoints": 9965558,
+      "originalPath": "assets/pcd/pcd/holorecon/building1.ply",
+      "originalBytes": 149483673,
+      "previewPoints": 1000000,
+      "up": "y",
+      "dense": {
+        "path": "assets/pcd/dense/holorecon-building1/manifest.json",
+        "bytes": 149486097,
+        "parts": 9
+      }
+    },
+    {
+      "id": "holorecon-building2",
+      "dataset": "PanoRecon",
+      "label": "Building 2",
+      "path": "assets/pcd/web/holorecon-building2.ply",
+      "poster": "assets/pcd/web/holorecon-building2.webp",
+      "bytes": 15000235,
+      "sourcePoints": 9131516,
+      "originalPath": "assets/pcd/pcd/holorecon/building2.ply",
+      "originalBytes": 136973043,
+      "previewPoints": 1000000,
+      "up": "y",
+      "dense": {
+        "path": "assets/pcd/dense/holorecon-building2/manifest.json",
+        "bytes": 136975466,
+        "parts": 9
+      }
+    },
+    {
+      "id": "holorecon-resudence1",
+      "dataset": "PanoRecon",
+      "label": "Residence 1",
+      "path": "assets/pcd/web/holorecon-resudence1.ply",
+      "poster": "assets/pcd/web/holorecon-resudence1.webp",
+      "bytes": 15000235,
+      "sourcePoints": 10454292,
+      "originalPath": "assets/pcd/pcd/holorecon/resudence1.ply",
+      "originalBytes": 156814684,
+      "previewPoints": 1000000,
+      "up": "y",
+      "dense": {
+        "path": "assets/pcd/dense/holorecon-resudence1/manifest.json",
+        "bytes": 156817409,
+        "parts": 10
+      }
+    },
+    {
+      "id": "holorecon-residence2",
+      "dataset": "PanoRecon",
+      "label": "Residence 2",
+      "path": "assets/pcd/web/holorecon-residence2.ply",
+      "poster": "assets/pcd/web/holorecon-residence2.webp",
+      "bytes": 15000235,
+      "sourcePoints": 9787353,
+      "originalPath": "assets/pcd/pcd/holorecon/residence2.ply",
+      "originalBytes": 146810598,
+      "previewPoints": 1000000,
+      "up": "y",
+      "dense": {
+        "path": "assets/pcd/dense/holorecon-residence2/manifest.json",
+        "bytes": 146813021,
+        "parts": 9
+      }
+    },
+    {
+      "id": "holorecon-road",
+      "dataset": "PanoRecon",
+      "label": "Road",
+      "path": "assets/pcd/web/holorecon-road.ply",
+      "poster": "assets/pcd/web/holorecon-road.webp",
+      "bytes": 15000235,
+      "sourcePoints": 10371083,
+      "originalPath": "assets/pcd/pcd/holorecon/road.ply",
+      "originalBytes": 155566549,
+      "previewPoints": 1000000,
+      "up": "y",
+      "dense": {
+        "path": "assets/pcd/dense/holorecon-road/manifest.json",
+        "bytes": 155569274,
+        "parts": 10
+      }
+    },
+    {
+      "id": "360loc-hall",
+      "dataset": "360LOC",
+      "label": "Hall",
+      "path": "assets/pcd/web/360loc-hall.ply",
+      "poster": "assets/pcd/web/360loc-hall.webp",
+      "bytes": 15000235,
+      "sourcePoints": 10419565,
+      "originalPath": "assets/pcd/pcd/360loc/hall.ply",
+      "originalBytes": 156293779,
+      "previewPoints": 1000000,
+      "up": "y",
+      "dense": {
+        "path": "assets/pcd/dense/360loc-hall/manifest.json",
+        "bytes": 156296504,
+        "parts": 10
+      }
+    },
+    {
+      "id": "yutomms-sequenceb",
+      "dataset": "YUTO MMS",
+      "label": "Sequence B",
+      "path": "assets/pcd/web/yutomms-sequenceb.ply",
+      "poster": "assets/pcd/web/yutomms-sequenceb.webp",
+      "bytes": 15000235,
+      "sourcePoints": 10036475,
+      "originalPath": "assets/pcd/pcd/YUTOMMS/SequenceB.ply",
+      "originalBytes": 150547429,
+      "previewPoints": 1000000,
+      "up": "y",
+      "dense": {
+        "path": "assets/pcd/dense/yutomms-sequenceb/manifest.json",
+        "bytes": 150549852,
+        "parts": 9
+      }
+    },
+    {
+      "id": "yutomms-sequencec",
+      "dataset": "YUTO MMS",
+      "label": "Sequence C",
+      "path": "assets/pcd/web/yutomms-sequencec.ply",
+      "poster": "assets/pcd/web/yutomms-sequencec.webp",
+      "bytes": 15000235,
+      "sourcePoints": 9670880,
+      "originalPath": "assets/pcd/pcd/YUTOMMS/SequenceC.ply",
+      "originalBytes": 145063503,
+      "previewPoints": 1000000,
+      "up": "y",
+      "dense": {
+        "path": "assets/pcd/dense/yutomms-sequencec/manifest.json",
+        "bytes": 145065926,
+        "parts": 9
+      }
+    }
+  ]
+}

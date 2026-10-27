@@ -1,3 +1,7 @@
 __pycache__/
 .preview/
 node_modules/
+# Original local inputs are preserved; publish lossless Dense parts instead.
+/assets/pcd/pcd/
+# Enable Jekyll exclusions for branch-based Pages publishing.
+/.nojekyll

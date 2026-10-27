@@ -1,0 +1,11 @@
+# Keep the published Pages site below 1 GB. Dense parts remain available through
+# raw.githubusercontent.com from this repository, as configured in scenes.json.
+exclude:
+  - assets/pcd/dense
+  - assets/pcd/pcd
+  - scripts
+  - tests
+  - README.md
+  - node_modules
+include:
+  - assets/vendor

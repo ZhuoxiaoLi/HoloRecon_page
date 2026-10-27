@@ -13,12 +13,14 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="assets/js/main.js" defer></script>
+  <link rel="stylesheet" href="assets/css/pointcloud.css?v=5">
+  <script type="module" src="assets/js/pointcloud-ui.js?v=7"></script>
 </head>
 <body>
   <a class="skip-link" href="#overview">Skip to content</a>
   <header class="site-header"><div class="header-inner">
     <a class="brand" href="#" aria-label="HoloRecon home"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 29 9.5v13L16 30 3 22.5v-13Z M3 9.5 16 17l13-7.5M16 17v13M9.5 6 23 13.5v13"/></svg>Holo<span>Recon</span></a>
-    <nav aria-label="Main navigation"><a href="#overview">Overview</a><a href="#method">Method</a><a href="#benchmark">Benchmark</a><a href="#evaluation">Evaluation</a><a href="#results">Videos</a></nav>
+    <nav aria-label="Main navigation"><a href="#pointcloud">3D Viewer</a><a class="nav-secondary" href="#overview">Overview</a><a href="#method">Method</a><a class="nav-secondary" href="#benchmark">Benchmark</a><a href="#evaluation">Evaluation</a><a href="#results">Videos</a></nav>
     <a class="header-contact" href="mailto:zhuoxiaoli@hkust-gz.edu.cn">Contact <span aria-hidden="true">↗</span></a>
   </div></header>
   <main>
@@ -31,9 +33,40 @@
       <div class="affiliations" aria-label="Author affiliations"><p><sup>1</sup> The Hong Kong University of Science and Technology (Guangzhou)</p><div><p><sup>2</sup> University of Liverpool</p><p><sup>3</sup> Hong Kong Polytechnic University</p><p><sup>4</sup> Xi'an Jiaotong-Liverpool University</p></div></div>
       <p class="author-notes"><span><sup>*</sup> Equal contribution</span><span><sup>†</sup> Corresponding author</span></p>
       <p class="project-contact">Contact: <a href="mailto:zhuoxiaoli@hkust-gz.edu.cn">zhuoxiaoli@hkust-gz.edu.cn</a></p>
-      <div class="hero-actions"><a class="button button-primary" href="#results"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 9 6-9 6Z"/></svg>Video demonstrations</a><a class="button button-outline" href="#evaluation">Experimental results <span aria-hidden="true">↗</span></a><a class="button button-outline" href="#benchmark">PanoRecon benchmark <span aria-hidden="true">↗</span></a></div>
+      <div class="hero-actions"><a class="button button-primary" href="#pointcloud">Explore point clouds <span aria-hidden="true">↗</span></a><a class="button button-outline" href="#results">Video demonstrations</a><a class="button button-outline" href="#evaluation">Experimental results <span aria-hidden="true">↗</span></a></div>
       <figure class="teaser-figure"><button class="figure-button" data-image="assets/images/teaser2.jpg" data-caption="HoloRecon reconstructs a 1.2 km panoramic route by coupling sparse mapping with feed-forward geometry." aria-label="Enlarge HoloRecon overview figure"><img src="assets/web/teaser2.webp" alt="Panoramic input, a globally aligned reconstruction of a 1.2 kilometer route, and enlarged local geometry" width="2400" height="1188" fetchpriority="high"><span class="zoom-icon" aria-hidden="true">↗</span></button><figcaption><strong>Globally consistent reconstruction from a long panoramic sequence.</strong> HoloRecon couples sparse mapping with feed-forward geometry along a 1.2 km route.</figcaption></figure>
       <div class="hero-facts"><span><strong>360°</strong> panoramic input</span><span><strong>15</strong> evaluated scenes / sequences</span><span><strong>7 scenes</strong> in the new PanoRecon benchmark</span></div>
+    </section>
+
+    <section class="pointcloud-section wrap section-space" id="pointcloud" aria-labelledby="pointcloud-title">
+      <div class="section-label"><span>EXPLORE / INTERACTIVE 3D</span><span>POINT-CLOUD RECONSTRUCTIONS</span></div>
+      <div class="section-heading"><div><h2 id="pointcloud-title">Interactive Point Clouds</h2><p class="pc-visualization-note">For browser visualization, Dense point clouds are downsampled to approximately 10 million points per scene.</p><p class="section-intro">Inspect scene geometry in 3D. Rotate, zoom, and adjust the rendered point size.</p></div></div>
+      <div class="pc-viewer" id="pc-viewer">
+        <div class="pc-toolbar"><div><label for="pc-scene">Scene</label><select id="pc-scene" aria-label="Point cloud scene"><option>Loading scene list…</option></select></div><div class="pc-version"><label for="pc-resolution">Point density</label><select id="pc-resolution"><option value="original" selected>Dense</option><option value="preview">Sparse</option></select></div><button type="button" id="pc-load" class="pc-button pc-primary" disabled>Load 3D scene</button><button type="button" id="pc-local-open" class="pc-button">Open local PLY</button><input type="file" id="pc-local-file" accept=".ply" aria-label="Open a local PLY point cloud" hidden><p class="pc-source-info" id="pc-source-info">Loading Residence 2 · Dense.</p></div>
+        <div class="pc-layout">
+          <div class="pc-viewport" id="pc-viewport" style="--pc-poster:url('assets/web/hero.webp')" aria-label="3D point cloud display" aria-busy="false">
+            <div class="pc-poster" id="pc-poster" role="img" aria-label="Two-dimensional reconstruction preview"></div>
+            <div class="pc-scene-badge"><span class="pc-live-dot"></span><span id="pc-view-badge">2D SCENE PREVIEW</span></div>
+            <div class="pc-message" id="pc-message"><div class="pc-message-card"><span class="pc-cube" aria-hidden="true">◇</span><h3 id="pc-message-title">Loading Residence 2</h3><p id="pc-message-text">Preparing the dense point cloud…</p><progress id="pc-progress" max="100" aria-label="Point cloud loading progress"></progress><button type="button" class="pc-button pc-primary" id="pc-start" hidden>Load selected scene</button></div></div>
+            <p class="pc-stats" id="pc-stats" role="status" aria-live="polite">No point cloud loaded</p>
+            <button type="button" class="pc-fullscreen" id="pc-fullscreen" aria-label="Enter point cloud fullscreen" title="Fullscreen">⛶</button>
+          </div>
+          <div class="pc-settings"><h3>Display settings</h3><fieldset id="pc-controls" disabled>
+            <div class="pc-control"><label for="pc-size">Point size <output id="pc-size-value" for="pc-size">2.0 px</output></label><input type="range" id="pc-size" min="0.5" max="8" step="0.1" value="2" aria-label="Point size"><div class="pc-range-ends"><span>Fine</span><span>Large</span></div></div>
+            <div class="pc-control"><label for="pc-zoom">View zoom <output id="pc-zoom-value" for="pc-zoom">1.00×</output></label><input type="range" id="pc-zoom" min="0.25" max="4" step="0.05" value="1" aria-label="Point cloud zoom"></div>
+            <div class="pc-control"><label for="pc-color">Color</label><select id="pc-color"><option value="rgb">Original RGB</option><option value="height">Elevation</option><option value="solid">Monochrome</option></select></div>
+            <div class="pc-control"><label for="pc-background">Background</label><select id="pc-background"><option value="dark">Dark</option><option value="light">Light</option></select></div>
+            <div class="pc-control"><label for="pc-up">Up axis</label><select id="pc-up"><option value="y" selected>+Y up</option><option value="-y">−Y up</option><option value="z">+Z up</option><option value="-z">−Z up</option><option value="x">+X up</option><option value="-x">−X up</option></select></div>
+            <div class="pc-presets" role="group" aria-label="Point cloud camera views"><button type="button" class="pc-button" data-pc-view="perspective">Perspective</button><button type="button" class="pc-button" data-pc-view="top">Top</button><button type="button" class="pc-button" data-pc-view="front">Front</button><button type="button" class="pc-button" id="pc-reset">Reset view</button></div>
+            <label class="pc-check"><input type="checkbox" id="pc-grid"> Show ground grid</label><label class="pc-check"><input type="checkbox" id="pc-rotate">Auto-rotate</label>
+          </fieldset>
+          <div class="pc-control pc-quality"><label for="pc-budget">Display point budget</label><select id="pc-budget"><option value="0" selected>All points · no sampling</option><option value="250000">250,000 · lightweight</option><option value="500000">500,000 · balanced</option><option value="1000000">1,000,000 · detailed</option><option value="2000000">2,000,000 · high detail</option><option value="5000000">5,000,000 · high detail</option></select><p>Dense and Sparse both display all available points by default. Choose a lower budget for a lighter view; this reloads the current cloud.</p></div>
+          </div>
+        </div>
+        <div class="pc-footer"><p><strong>Orbit</strong> Left drag · <strong>Pan</strong> Right drag · <strong>Zoom</strong> Scroll / pinch</p><p>Touch: one finger to orbit; two fingers to pan and zoom.</p></div>
+      </div>
+      <p class="pc-note" id="pc-data-note">Residence 2 loads automatically in Dense mode, with all source points displayed.</p>
+      <noscript><p class="pc-note">JavaScript and WebGL2 are required for the interactive point-cloud viewer.</p></noscript>
     </section>
 
     <section class="overview-section wrap section-space" id="overview" aria-labelledby="overview-title">

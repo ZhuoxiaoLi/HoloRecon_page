@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "format": "ply-chunks",
+  "sourcePoints": 10454292,
+  "validPoints": 10454292,
+  "sourceBytes": 156814684,
+  "sourceSha256": "2bd0ad07e226650546dd91c08c1ee92eb1b0e2ffa1cb50ed00701e3395c785fb",
+  "bytes": 156817409,
+  "hasColors": true,
+  "bounds": {
+    "min": [
+      -78.89279174804688,
+      -20.071908950805664,
+      -57.393184661865234
+    ],
+    "max": [
+      19.64934730529785,
+      2.349116086959839,
+      43.204368591308594
+    ]
+  },
+  "signature": {
+    "bytes": 156814684,
+    "mtime": 1793101212000000000,
+    "chunkMiB": 16
+  },
+  "parts": [
+    {
+      "path": "part-0001-e7d050ac899bafa1.ply",
+      "bytes": 16777083,
+      "points": 1118452,
+      "validPoints": 1118452,
+      "pointOffset": 0,
+      "sha256": "e7d050ac899bafa120b95e27dd4089772bcaff87ee222568fa3b83daae229bd2"
+    },
+    {
+      "path": "part-0002-13d1392bf6384c69.ply",
+      "bytes": 16777083,
+      "points": 1118452,
+      "validPoints": 1118452,
+      "pointOffset": 1118452,
+      "sha256": "13d1392bf6384c692011e3526b82d66143a79cee6f014b4b3b665ba93ce99e4e"
+    },
+    {
+      "path": "part-0003-9340871de777ec0c.ply",
+      "bytes": 16777083,
+      "points": 1118452,
+      "validPoints": 1118452,
+      "pointOffset": 2236904,
+      "sha256": "9340871de777ec0c742b6655f99759ea05f1e6752fcfc5a6a7ece0ac71ca2a3d"
+    },
+    {
+      "path": "part-0004-8dcb16062748c386.ply",
+      "bytes": 16777083,
+      "points": 1118452,
+      "validPoints": 1118452,
+      "pointOffset": 3355356,
+      "sha256": "8dcb16062748c386b46ba3f9b2e4226668f39b95e3251dd36ed041e780484955"
+    },
+    {
+      "path": "part-0005-b759b66138f00604.ply",
+      "bytes": 16777083,
+      "points": 1118452,
+      "validPoints": 1118452,
+      "pointOffset": 4473808,
+      "sha256": "b759b66138f00604a25e334571a8757bdb5f941c14954fca2a82ac22a3ca21c1"
+    },
+    {
+      "path": "part-0006-dbb920a991e0a197.ply",
+      "bytes": 16777083,
+      "points": 1118452,
+      "validPoints": 1118452,
+      "pointOffset": 5592260,
+      "sha256": "dbb920a991e0a1978ccebb285d08cc14d92d96510da528a3d7e81381a667b432"
+    },
+    {
+      "path": "part-0007-c38a6e8b1e955820.ply",
+      "bytes": 16777083,
+      "points": 1118452,
+      "validPoints": 1118452,
+      "pointOffset": 6710712,
+      "sha256": "c38a6e8b1e955820cc87115c994d0cd353a3baeb5cdfba408a5a77807ef63c3a"
+    },
+    {
+      "path": "part-0008-97c6491317aabaea.ply",
+      "bytes": 16777083,
+      "points": 1118452,
+      "validPoints": 1118452,
+      "pointOffset": 7829164,
+      "sha256": "97c6491317aabaea1cef185474ac1ef396191e37195f08c84df2feb458b8fd11"
+    },
+    {
+      "path": "part-0009-8bb93097eda96fa7.ply",
+      "bytes": 16777083,
+      "points": 1118452,
+      "validPoints": 1118452,
+      "pointOffset": 8947616,
+      "sha256": "8bb93097eda96fa7d4a9ef4419d76fcd7eb9f18cc3c5ccee99b8966857183ded"
+    },
+    {
+      "path": "part-0010-1520e9b16260de0c.ply",
+      "bytes": 5823662,
+      "points": 388224,
+      "validPoints": 388224,
+      "pointOffset": 10066068,
+      "sha256": "1520e9b16260de0c93aef79b4b8fe1f0f72dc0f0bd825c641888e2b1da97b281"
+    }
+  ]
+}
